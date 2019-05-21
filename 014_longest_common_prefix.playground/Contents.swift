@@ -4,9 +4,9 @@ func longestCommonPrefix(_ strs: [String]) -> String {
         return ""
     }
     let first = Array(strs.first!)
+    let chars = strs.map { Array($0) }
     for i in 0..<first.count {
-        let string = String(first[0...i])
-        if strs.contains(where: { !$0.starts(with: string)}) {
+        if chars.contains(where: { $0.count <= i || $0[i] != first[i] }) {
             if i < 1 {
                 return ""
             }
@@ -17,4 +17,4 @@ func longestCommonPrefix(_ strs: [String]) -> String {
 }
 
 longestCommonPrefix(["flower","flow","flight"])
-//longestCommonPrefix(["a", "b"])
+longestCommonPrefix(["aa", "a"])
