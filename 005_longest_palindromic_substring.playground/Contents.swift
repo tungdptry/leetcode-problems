@@ -10,7 +10,7 @@ class Solution {
 //    Example 2:
 //
 //    Input: "cbbd"
-//    Output: "bb"
+//    Output: "bb"   
 
     func longestPalindrome(_ s: String) -> String {
         if s.isEmpty {
